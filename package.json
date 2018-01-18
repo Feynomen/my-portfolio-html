@@ -13,5 +13,8 @@
   },
   "author": "Martin Podloucký",
   "license": "MIT",
-  "description": "My projects portfolio"
+  "description": "My projects portfolio",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.3"
+  }
 }
