@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+    <script src='/js/jquery-3.3.1.min.js'></script>
+    <script src='/js/jquery.appear.js'></script>
 </head>
 
 <body>
@@ -15,7 +18,7 @@
 
         <nav class="navbar navbar-expand lg navbar-dark bg-dark">
             <a class="navbar-brand bg-light" href="/">
-                <img src="/img/logo.svg" alt="My portfolio" width="200">
+                <img src="/img/logo.png" alt="My portfolio" width="50">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -49,8 +52,14 @@
 
     <main id="content" class="container">
         <section id="home">
-            <h1>Hi, I am Anete Webbie.</h1>
-            <p>I’m a full-stack web developer.</p>
+            <div class="jumbotron">
+                <h1>Hi, I am Maxime Boczulak
+                </h1>
+                <p>
+                    <strong>I'm a Full-stack Web Developer.</strong>
+                </p>
+
+            </div>
 
             <p>Let’s work together to make your produt stand out. I create beautiful and functional websites. I work with my
                 clients step by step from the idea until the fully functioning web application.</p>
@@ -82,16 +91,32 @@
         <section id="skills">
             <h2>My skills</h2>
 
-            <ul>
-                <li>HTML</li>
-                <li>CSS, Sass</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>jQuery</li>
-                <li>PHP</li>
-                <li>Laravel</li>
-                <li>UX</li>
-            </ul>
+            <div class='progress_counter'>
+                <div id="bar1" class="bar">
+                    <span>HTML</span>
+                </div>
+                <div id="bar2" class="bar">
+                    <span>CSS,Sass</span>
+                </div>
+                <div id="bar3" class="bar">
+                    <span>JavaScript</span>
+                </div>
+                <div id="bar4" class="bar">
+                    <span>React</span>
+                </div>
+                <div id="bar5" class="bar">
+                    <span>jQuery</span>
+                </div>
+                <div id="bar6" class="bar">
+                    <span>PHP</span>
+                </div>
+                <div id="bar7" class="bar">
+                    <span>Laravel</span>
+                </div>
+                <div id="bar8" class="bar">
+                    <span>UX</span>
+                </div>
+            </div>
         </section>
 
         <section id="portfolio" class="container">
@@ -210,12 +235,31 @@
         <p>Nice to meet you!</p>
         <p>Copyright @Aneta Webbie 2018</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
         crossorigin="anonymous"></script>
+
+    <script>
+        $('.progress_counter').appear();
+
+        function progress_counter(barID, value) {
+            $(barID).animate({
+                'width': value
+            }, 1500);
+        }
+
+        $('.progress_counter').on('appear', function () {
+            progress_counter('#bar1', '50%');
+            progress_counter('#bar2', '75%');
+            progress_counter('#bar3', '40%');
+            progress_counter('#bar4', '95%');
+            progress_counter('#bar5', '85%');
+            progress_counter('#bar6', '65%');
+            progress_counter('#bar7', '85%');
+            progress_counter('#bar8', '70%');
+        })
+    </script>
 </body>
 
 </html>
